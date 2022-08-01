@@ -1,0 +1,16 @@
+[url "git@github.com:soveren"]
+    insteadOf = https://github.com/soveren
+[core]
+    excludesfile = ~/.gitignore_global
+[user]
+    name = Eugene Blikh
+    email = bigbes@gmail.com
+[branch "master"]
+    merge = true
+    mergeoptions = "--ff-only"
+[pull]
+    rebase = true
+[push]
+    default = current
+[alias]
+    set-upstream = "!git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`"
