@@ -52,16 +52,16 @@ export EDITOR='vim'
 path+=('/data/go/bin' '/usr/local/bin' '/usr/local/sbin')
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    path+=('$HOME/Library/Python/2.7/bin' '$HOME/go/bin')
+    path+=("$HOME/Library/Python/2.7/bin" "$HOME/go/bin")
 
     source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
     source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 else # probably linux
+    path+=("$HOME/bin" "$HOME/go/bin")
 fi
 
 # export GOPROXY=https://proxy.golang.org,direct
 export GOPRIVATE=github.com/insolar,github.com/soverenio
-export GITHUB_TOKEN=${GITHUB_PAT}
 export EDITOR=vim
 export GOVCS=*:all
 
