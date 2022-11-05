@@ -1,36 +1,40 @@
 ZSH_THEME="spaceship"
+SPACESHIP_CONFIG="$HOME/.zsh_theme"
 
-SPACESHIP_TIME_SHOW=true
+# ORDER
+SPACESHIP_PROMPT_ORDER=(
+  jobs
+  time
+  vi_mode
+  user
+  host
+  async
+  char    # PROMPT CHAR
+  dir
+  git
+  golang
+  rust
+  docker
+  venv
+  python
+)
+
+# TIME
+SPACESHIP_TIME_SHOW=always
 SPACESHIP_TIME_PREFIX="[ "
 SPACESHIP_TIME_SUFFX=" ]"
 SPACESHIP_TIME_FORMAT="%D{%H:%M:%S}"
 SPACESHIP_TIME_COLOR="blue"
-# ORDER
-SPACESHIP_PROMPT_ORDER=(
-  time     #
-  vi_mode  # these sections will be
-  user     # before prompt char
-  host     #
-  char
-  dir
-  git
-  node
-  ruby
-  xcode
-  swift
-  golang
-  docker
-  venv
-  pyenv
-)
 
 # USER
+SPACESHIP_USER_SHOW=always
 SPACESHIP_USER_PREFIX="" # remove `with` before username
 SPACESHIP_USER_SUFFIX="" # remove space before host
 
 # HOST
 # Result will look like this:
 #   username@:(hostname)
+SPACESHIP_HOST_SHOW=true
 SPACESHIP_HOST_PREFIX=" at "
 SPACESHIP_HOST_SUFFIX=" "
 SPACESHIP_HOST_SHOW_FULL="true"
@@ -38,11 +42,16 @@ SPACESHIP_HOST_SHOW="always"
 SPACESHIP_HOST_COLOR="white"
 SPACESHIP_HOST_COLOR_SSH="red"
 
+# ASYNC
+SPACESHIP_ASYNC_SHOW=true
+SPACESHIP_ASYNC_SHOW_COUNT=true
+
 # DIR
 SPACESHIP_DIR_PREFIX='' # disable directory prefix, cause it's not the first section
 SPACESHIP_DIR_TRUNC='2'
 
 # GIT
+SPACESHIP_GIT_ASYNC=false
 # Disable git symbol
 SPACESHIP_GIT_SYMBOL="" # disable git prefix
 SPACESHIP_GIT_BRANCH_PREFIX="" # disable branch prefix too
@@ -54,27 +63,8 @@ SPACESHIP_GIT_BRANCH_SUFFIX="" # remove space after branch name
 SPACESHIP_GIT_STATUS_PREFIX=""
 SPACESHIP_GIT_STATUS_SUFFIX=""
 
-# NODE
-SPACESHIP_NODE_PREFIX="node:("
-SPACESHIP_NODE_SUFFIX=") "
-SPACESHIP_NODE_SYMBOL=""
-
-# RUBY
-SPACESHIP_RUBY_PREFIX="ruby:("
-SPACESHIP_RUBY_SUFFIX=") "
-SPACESHIP_RUBY_SYMBOL=""
-
-# XCODE
-SPACESHIP_XCODE_PREFIX="xcode:("
-SPACESHIP_XCODE_SUFFIX=") "
-SPACESHIP_XCODE_SYMBOL=""
-
-# SWIFT
-SPACESHIP_SWIFT_PREFIX="swift:("
-SPACESHIP_SWIFT_SUFFIX=") "
-SPACESHIP_SWIFT_SYMBOL=""
-
 # GOLANG
+SPACESHIP_GOLANG_ASYNC=false
 SPACESHIP_GOLANG_PREFIX="go:("
 SPACESHIP_GOLANG_SUFFIX=") "
 SPACESHIP_GOLANG_SYMBOL=""
@@ -88,7 +78,7 @@ SPACESHIP_DOCKER_SYMBOL=""
 SPACESHIP_VENV_PREFIX="venv:("
 SPACESHIP_VENV_SUFFIX=") "
 
-# PYENV
-SPACESHIP_PYENV_PREFIX="python:("
-SPACESHIP_PYENV_SUFFIX=") "
-SPACESHIP_PYENV_SYMBOL=""
+# PYTHON
+SPACESHIP_PYTHON_PREFIX="python:("
+SPACESHIP_PYTHON_SUFFIX=") "
+SPACESHIP_PYTHON_SYMBOL=""

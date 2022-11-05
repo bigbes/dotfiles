@@ -1,0 +1,13 @@
+source $HOME/.zplug/init.zsh
+
+if ! zplug check; then
+    zplug "reegnz/jq-zsh-plugin"
+
+    zplug check --verbose
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load

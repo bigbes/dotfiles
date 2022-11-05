@@ -1,25 +1,5 @@
-if [[ -f "$HOME/.zplug/init.zsh" ]]; then
-    source $HOME/.zplug/init.zsh
-
-    zplug "reegnz/jq-zsh-plugin"
-
-    zplug "direnv/direnv",    as:command, from:gh-r, rename-to:direnv
-    zplug "github/hub",       as:command, from:gh-r, rename-to:hub, if:"[[ $OSTYPE == *linux* ]]"
-    zplug "stedolan/jq",      as:command, from:gh-r
-    zplug "sharkdp/bat",      as:command, from:gh-r, rename-to:bat
-    zplug "peco/peco",        as:command, from:gh-r, rename-to:peco
-    zplug "b4b4r07/httpstat", as:command, use:"httpstat.sh", rename-to:httpstat
-    zplug "sharkdp/fd",       as:command, from:gh-r, rename-to:fd
-
-
-    if ! zplug check; then
-        zplug check --verbose
-        printf "Install? [y/N]: "
-        if read -q; then
-            echo; zplug install
-        fi
-    fi
-    zplug load
+if [[ -f "$HOME/.zplug/init.zsh" && -f "$HOME/.zsh_plug" ]]; then
+    source $HOME/.zsh_plug
 fi
 
 if [[ -f $HOME/.zsh_theme ]]; then
@@ -41,7 +21,7 @@ if [[ -f "$HOME/.zsh_secrets" ]]; then
     source "$HOME/.zsh_secrets"
 fi
 
-plugins=(git docker docker-compose macos doctl kubectl direnv)
+plugins=(git docker docker-compose macos doctl kubectl direnv spaceship-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -65,3 +45,4 @@ export GOPRIVATE=github.com/insolar,github.com/soverenio
 export EDITOR=vim
 export GOVCS=*:all
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
