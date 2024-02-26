@@ -1,12 +1,24 @@
 " autocmd FileType diff,kconfig setlocal tabstop=8
 
+" function! s:LinuxFormatting()
+"     setlocal tabstop=8
+"     setlocal shiftwidth=8
+"     setlocal textwidth=80
+"     setlocal noexpandtab
+" 
+"     setlocal cindent
+"     setlocal formatoptions=tcqlron
+"     setlocal cinoptions=:0,l1,t0,g0
+" endfunction
+
 function! s:LinuxFormatting()
-    setlocal tabstop=8
-    setlocal shiftwidth=8
+    setlocal tabstop=4
+    setlocal shiftwidth=4
     setlocal textwidth=80
-    setlocal noexpandtab
+    setlocal expandtab
 
     setlocal cindent
+    setlocal autoindent
     setlocal formatoptions=tcqlron
     setlocal cinoptions=:0,l1,t0,g0
 endfunction

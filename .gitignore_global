@@ -1,2 +1,4 @@
 **/.*.sw[abcdefghijklmnopqrstuvwxyz]
 .idea
+.vs
+cmake-build-*

@@ -2,9 +2,12 @@
     insteadOf = https://github.com/soveren
 [core]
     excludesfile = ~/.gitignore_global
+    autocrlf = input
+    editor = vim --nofork
 [user]
     name = Eugene Blikh
-    email = bigbes@gmail.com
+    email = bigbes@bigb.es
+    signingkey = A6993581CE2EE01F
 [branch "master"]
     merge = true
     mergeoptions = "--ff-only"
@@ -14,3 +17,7 @@
     default = current
 [alias]
     set-upstream = "!git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`"
+[init]
+	defaultBranch = master
+[commit]
+	gpgsign = true
